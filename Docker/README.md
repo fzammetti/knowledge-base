@@ -6,7 +6,9 @@
     curl -fsSL https://get.docker.com/ | sh
     systemctl enable docker
 
-## Create a new container (Jenkins as the example, assuming you’ve already did docker pull \<image_name>)
+## Create a new container
+
+Using Jenkins as an example, and assuming you’ve already did docker pull \<image_name>:
 
     docker run -d -u 0 -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home --privileged --name jenkins jenkins/jenkins:lts
 
