@@ -15,7 +15,7 @@
       RequestHeader    unset  Accept-Encoding
     </Location>
 
-  Now, http://<server_name>/<app_name> will redirect to http://<Server_name>:8080 (which is assumed to be a Tomcat
+  Now, http://\<server_name>/\<app_name> will redirect to http://\<Server_name>:8080 (which is assumed to be a Tomcat
   server in a default configuration) with the app running as the ROOT app (you can modify this to point to a different
   context if you need to).
 
