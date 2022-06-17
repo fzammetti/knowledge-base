@@ -3,13 +3,13 @@
 
 ------------------------------------------------------------------------------
 
-## Get name of current method:
+## Get name of current method
 
     String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-  Note: this might be somewhat brittle, so might not be production-ready!
+Note: this might be somewhat brittle, so might not be production-ready!
 
-## Double-brace (immediate) collection initialization:
+## Double-brace (immediate) collection initialization
 
     List<string> countries = new ArrayList<string>() {{
       add("India");

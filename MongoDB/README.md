@@ -1,7 +1,7 @@
 # MongoDB
 ----------
 
-## mongo.exe shell commands:
+## mongo.exe shell commands
 
 * List databases: **db**
 * Use a specified database: **use \<database_name>**

@@ -1,7 +1,7 @@
 # GitLab
 ----------
 
-•	How to remove a CI/CD runner in GitLab:
+## How to remove a CI/CD runner in GitLab
 
     gitlab-runner unregister --name <name>
     gitlab-runner verify –delete
@@ -9,7 +9,7 @@
     gitlab-runner verify
     gitlab-runner list
 
-•	To configure SMTP in GitLab (using non-SSL SMTP server):
+## To configure SMTP in GitLab (using non-SSL SMTP server)
 
 NOTE: I suspect this has to be re-done after every GitLab update.
 
@@ -52,4 +52,3 @@ Confirm the proper settings are shown.
     Notify.test_email('frank@zammetti.com', 'Hello World', 'This is a test message').deliver_now
 
 Confirm email is received properly.
-

@@ -1,11 +1,11 @@
 # Git
 ----------
 
-##	If you get an error about filenames being too long on a pull, run the following command in the git bin directory:
+##  If you get an error about filenames being too long on a pull, run the following command in the git bin directory
 
     git config --system core.longpaths true
 
-##	To copy a repo into a newly created remote repo, including all history, tags and branches:
+##  To copy a repo into a newly created remote repo, including all history, tags and branches
 
 First, clone original repo:
 

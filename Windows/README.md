@@ -1,7 +1,7 @@
 # Windows
 ----------
 
-## General Windows repair procedure:
+## General Windows repair procedure
 
     sfc /scannow
     DISM /Online /Cleanup-Image /CheckHealth
@@ -9,17 +9,17 @@
     DISM /Online /Cleanup-Image /RestoreHealth
     sfc /scannow
 
-## To reset networking:
+## To reset networking
 
     netsh winsock reset
     netsh int tcp reset
     netsh int ip reset
 
-## To reset the video driver:
+## To reset the video driver
 
     Win+Ctrl+Shift+B
 
-## If Windows Store downloads are getting stuck, execute this from an admin command prompt:
+## If Windows Store downloads are getting stuck, execute this from an admin command prompt
 
     dism /online /cleanup-image /startcomponentcleanup
 
@@ -38,17 +38,17 @@
     wsreset
     <reboot>
 
-## If Windows Store won’t launch, especially when trying to do wsreset, try this:
+## If Windows Store won’t launch, especially when trying to do wsreset, try this
 
     icacls "C:\Program Files\WindowsApps" /reset /t /c /q
 
   ...then run **wsreset** again.
 
-## List all installed hotfixes:
+## List all installed hotfixes
 
     wmic qfe
 
-## Fix tab key not working at Command Prompt:
+## Fix tab key not working at Command Prompt
 
     reg add "hkcu\software\microsoft\command processor" /v CompletionChar /d 9 /t REG_DWORD /f
     reg add "hkcu\software\microsoft\command processor" /v PathCompletionChar /d 9 /t REG_DWORD /f

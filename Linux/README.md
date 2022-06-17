@@ -1,48 +1,44 @@
 # Linux
 
-## How to verify the integrity of a directory full of JPG files and only show those that aren't uncorrupted:
-
-    jpeginfo -c -v /<directory_name>/*.jpg | awk '$0 !~ /\[OK\]/'
-
 ## User/Group Management
 
-### List all users:
+### List all users
 
     cat /etc/passwd
 
-### Show my user ID:
+### Show my user ID
 
     whoami
 
-### Show groups I’m a member of:
+### Show groups I’m a member of
 
     groups
 
-### Show details about me:
+### Show details about me
 
     id
 
-### Add group:
+### Add group
 
     addgroup
 
-### Add user or add user to group:
+### Add user or add user to group
 
     adduser
 
-### Delete user or remove user from group:
+### Delete user or remove user from group
 
     deluser
 
-### Change my password:
+### Change my password
 
     passwd
 
-### Show what commands I can sudo:
+### Show what commands I can sudo
 
     sudo -l
 
-### Give user ability to run all commands with sudo:
+### Give user ability to run all commands with sudo
 
 * Switch to root, then run **visudo**
 * Find where it says **root ALL=(ALL) ALL**
@@ -51,69 +47,69 @@
 * Hit ESC to exit insert-mode
 * Type **:x** to save and exit
 
-### Switch user:
+### Switch user
 
     su
 
-### Super user do (run as root):
+### Super user do (run as root)
 
     sudo
 
-### Display user info:
+### Display user info
 
     id <username, optional>
 
 ## File/Disk Management
 
-### List directory contents:
+### List directory contents
 
     ls
 
-### Show hidden files and directories:
+### Show hidden files and directories
 
     ls -al
 
-### Probably the most useful version of ls for general purposes:
+### Probably the most useful version of ls for general purposes
 
     ls -lha
 
-### Delete directory that isn’t empty:
+### Delete directory that isn’t empty
 
     rm -r XXX
 
-### Show free space:
+### Show free space
 
     df -h
 
-### Display text file contents:
+### Display text file contents
 
     cat
 
-### Change directory:
+### Change directory
 
     cd
 
-### Show current directory:
+### Show current directory
 
     pwd
 
-### Clear console:
+### Clear console
 
     clear
 
-### Remove a file or directory:
+### Remove a file or directory
 
     rm
 
-### Create new empty file or change timestamp of existing file:
+### Create new empty file or change timestamp of existing file
 
     touch
 
-### Watch a file as it changes:
+### Watch a file as it changes
 
     tail
 
-### Search a file for text string:
+### Search a file for text string
 
     grep
 
@@ -137,25 +133,31 @@ Examples:
 
 To any of these, you can add *| {less|more}* to the end for better viewing.
 
-### Change group owner of a file or directory:
+### Change group owner of a file or directory
 
     chgrp
 
-### Change permissions of a file or directory:
+### Change permissions of a file or directory
 
     chmod
 
-### Change user owner of a file or directory (can change group too):
+### Change user owner of a file or directory (can change group too)
 
     chown
 
-### Edit a text file: **nano** or **joe** or **mcedit** (or **vi** or **emacs*, of course, but I prefer any of those others)
+### Edit a text file
 
-### Display rights of a file in numeric format:
+* mcedit
+* joe
+* nano
+
+(or **vi** or **emacs*, of course, but I prefer any of those others, in the order shown above)
+
+### Display rights of a file in numeric format
 
     stat -c %a <file_or_directory_name>
 
-### Mount a Windows share:
+### Mount a Windows share
 
 * First, make sure Samba and CIFS-utils are installed
 * Then, add an entry to */etc/fstab*:
@@ -165,73 +167,69 @@ To any of these, you can add *| {less|more}* to the end for better viewing.
 * Then, ensure the mount point is created (i.e., **mkdir /mnt/\<name_of_mount_point>**)
 * Execute **mount -a** to add the mount point, then it should work
 
-### To ensure a Windows share is reconnected at boot, add an entry to **/etc/fstab**:
+### To ensure a Windows share is reconnected at boot, add an entry to **/etc/fstab**
 
     //<hostname>/<sharename>   <mount_point>    cifs    username=XXX,password=YYY 0 0
 
-### Generate an RSA keypair:
+### Generate an RSA keypair
 
     ssh-keygen -t rsa -b 4096
  
-### Important Locations
-
-* User list: **/etc/passwd**
-* User passwords: **/etc/shadow**
-* Group list: **/etc/group**
-
 ## Environment
 
-### List all commands you could run:
+### List all commands you could run
 
     compgen -c
 
-### List all aliases you could run:
+### List all aliases you could run
 
     compgen -a
 
-### List all built-ins you could run:
+### List all built-ins you could run
 
     compgen -b
 
-### List all keywords you could run:
+### List all keywords you could run
 
     compgen -k
 
-### List all functions you could run:
+### List all functions you could run
 
     compgen -A
 
-### List all the above in one go:
+### List all the above in one go
 
     compgen -A function -abck
 
-### Show processes listening on ports:
+### Show processes listening on ports
 
     netstat -tupln
 
-### Process info:
+### Process info
 * List currently running: **ps**
 * Stop a process: **kill**
 * Find out about all running processes: **ps -ag**
 * Process manager: **top**
 
-### Get status of a service:
+### Get status of a service
 
     service <service_name> status
 
-### Show shell history:
+### Show shell history
 
     history
 
-### Clear ALL shell history:
+### Clear ALL shell history
 
     history -c
 
-### Clear one specific history item:
+### Clear one specific history item
 
     history -d <xxx>
 
-### Assuming an APT-based system (like Ubuntu), you can list all packages installed directly and runnable by first doing:
+### List all packages installed directly and runnable
+
+Assuming an APT-based system (like Ubuntu), you can do this in two steps.  First, do:
 
     apt install aptitude
 
@@ -239,27 +237,27 @@ To any of these, you can add *| {less|more}* to the end for better viewing.
 
     aptitude search '~i!~M'
 
-### View systemd logs:
+### View systemd logs
 
     journalctl
 
 ## Shell Scripting
 
-### Referring to arguments:
+### Referring to arguments
 
     $1, $2
 
 ...and so on. Note: **$0** is your script name.
 
-### Conditional statement:
+### Conditional statement
 
     if {condition} then ... fi
 
-### Number comparison:
+### Number comparison
 
     -eq, -ne, -lt, -le, -gt, -ge
 
-### Test for file properties:
+### Test for file properties
 
 * **-s \<filename>** tells you if the file is not empty
 * **-f \<filename>** tells you whether the argument is a file and not a directory
@@ -268,67 +266,69 @@ To any of these, you can add *| {less|more}* to the end for better viewing.
 * **-r \<filename>** tests for readability
 * **-x \<filename>** tests for executability
 
-### Boolean logic operators:
+### Boolean logic operators
 
 * **!** tests for logical not
 * **-a** tests for logical and
 * **-o** tests for logical or
 
-### Multilevel conditional:
+### Multilevel conditional
 
     if {condition} then {statement} elif {condition} {statement} fi
 
-### For loop:
+### For loop
 
     for {variable name} in {list} do {statement} done
 
-### While loop:
+### While loop
 
     while {condition} do {statement} done
 
-### Case statement:
+### Case statement
 
     ase {variable} in {possible-value-1}) {statement};; {possible-value-2}) {statement};; esac
 
-### Read keyboard input:
+### Read keyboard input
 
     read {variable-name}
 
-### Define a function:
+### Define a function
 
     function-name() { #some code here return }
 
-## CentOS-Specific (probably... mostly...)
+## CentOS-Specific (probably... mostly... kinda... sorta...)
 
-### Get active firewall zone:
+### Get active firewall zone
 
     firewall-cmd --get-active-zones
 
-### List firewall services on a zone:
+### List firewall services on a zone
 
     firewall-cmd --zone=<zone> --list-all
 
-### Add a firewall rule:
+### Add a firewall rule
 
     firewall-cmd --permanent --zone=<zone> --add-port=<port>/<type=tcp|udp>
 
-### Restart firewall after changes:
+### Restart firewall after changes
 
     systemctl restart firewalld.service
 
-### Setting up a mount point to a Windows share:
+### Setting up a mount point to a Windows share
 
     yum install samba samba-client cifs-utils
     mkdir /mnt/<mount_point>
     mount.cifs //<server_name>/<share_name> <mount_point> -o user=<username> pass=<password>
 
-### If files can’t be downloaded by yum, you can manually download them and then put them in:
+### Yum manual installation
+
+If files can’t be downloaded by yum for some reason, you can manually download them and then put them in:
 
     /var/cache/yum/x86_64/7/*/packages
 
-YUM will use them as if it downloaded the RPM itself.
+Yum will use them as if it had downloaded the RPM itself.
 
-### Set default system text editor:
+### Set default system text editor
 
     echo "set nowrap" >>/etc/nanorc
     cat <<EOF >>/etc/profile.d/nano.sh
@@ -336,45 +336,47 @@ YUM will use them as if it downloaded the RPM itself.
     export EDITOR="nano"
     EOF
 
-### Change default version of Python:
+### Change default version of Python
 
     alternatives --install /usr/bin/python python /usr/bin/python3.6 2
     alternatives --install /usr/bin/python python /usr/bin/python2.7 1
 
 Assuming you have Python2 and Python3 installed, and they are at those versions, setting Python3 to a higher priority (2) makes it default.  Now, **python –version** will show 3.6.
 
-### Add EPEL repo for extra apps:
+### Add EPEL repo for extra apps
 
     yum install epel-release
 
-### Doing yum update shows “This system is not registered with an entitlement server. You can use subscription-manager to register.”  How to get rid of it:
+### Doing yum update shows “This system is not registered with an entitlement server. You can use subscription-manager to register.”
+
+How to get rid of it:
 
     mcedit /etc/yum/pluginconf.d/subscription-manager.conf
     Set enabled=0
  
 ## Services and tasks
 
-### Enable a service to start on boot:
+### Enable a service to start on boot
 
     systemctl enable <service_name>
 
-### Disable a service from starting on boot:
+### Disable a service from starting on boot
 
     systemctl disable <service_name>
 
-### See if a service is configured to start on boot:
+### See if a service is configured to start on boot
 
     chkconfig <service_name>
 
-### List all services:
+### List all services
 
     systemctl
 
-### List only running services (or another state):
+### List only running services (or another state)
 
     systemctl –state=<state>
 
-### To add a cron job:
+### To add a cron job
 
     crontab -e
 
@@ -384,28 +386,28 @@ Add entry, for example:
 
 (that will execute the specified shell script at 5am every day with output to the specified log file)
 
-### To back up all jobs:
+### To back up all jobs
 
     crontab -l > my_cron_backup.txt
 
-### To restore from backup:
+### To restore from backup
 
     crontab my_cron_backup.txt
     crontab -l
 
-### To list all jobs:
+### To list all jobs
 
     crontab -l
 
-### List enabled units:
+### List enabled units
 
     systemctl list-unit-files | grep enabled
 
-### View currently active targets:
+### View currently active targets
 
     systemctl list-units --type target
 
-### Create unit file in /etc/systemd/system named xxx.service, example:
+### Create unit file in /etc/systemd/system named xxx.service, example
 
     [Unit]
     Description=Start all containers at boot
@@ -440,6 +442,16 @@ Reboot and confirm:
 * Remember that you start out in normal mode.  Press **i** to enter insert mode, where you can then type.
 * Hit ESC to get back into normal mode.
 * In normal mode, commands are triggered by hitting **:** first (which moves cursor to bottom of screen) and then some command like **q** or **i*.
+
+### Important Locations
+
+* User list: **/etc/passwd**
+* User passwords: **/etc/shadow**
+* Group list: **/etc/group**
+
+## How to verify the integrity of a directory full of JPG files and only show those that aren't uncorrupted
+
+    jpeginfo -c -v /<directory_name>/*.jpg | awk '$0 !~ /\[OK\]/'
 
 ### Read mail:
 

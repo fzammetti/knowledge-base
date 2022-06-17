@@ -107,7 +107,7 @@ Note that this WILL remove root, so need to re-root afterwards (easiest to use N
 
 5. Reboot and you're done
 
-## Procedure to flash just one partition on a Galaxy S5:
+## Procedure to flash just one partition on a Galaxy S5
 
 If tiy want to flash a single stock partition such as boot, recovery or even system without flashing the complete firmware package, this is a quick explanation of how to use the Unified Android Toolkit to do it.
 

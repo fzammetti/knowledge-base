@@ -85,7 +85,9 @@ Example:
 
 Get all tweets of a specific hashtag
 
-## Here's a quick and easy way to get all tweets of a specific usage using the useful cURL library. The following example will retrieve all tweets with the #cat hashtag.
+## Here's a quick and easy way to get all tweets of a specific usage using the useful cURL library.
+
+The following example will retrieve all tweets with the #cat hashtag:
 
     function getTweets($hash_tag) {
       $url = 'http://search.twitter.com/search.atom?q='.urlencode($hash_tag);
@@ -113,7 +115,7 @@ Get all tweets of a specific hashtag
 
 (original source: http://www.inkplant.com/code/get-twitter-posts-by-hashtag.php)
 
-## Applying Even/Odd Classes
+## Applying even/odd classes
 
 When generating lists or tables using php, it is super useful to apply even/odd classes to each row of data in order to simplify CSS styling.
 
@@ -129,21 +131,21 @@ Instead of publicly displaying possible errors on your website, why not using a 
 
     // Our custom error handler
     function nettuts_error_handler($number, $message, $file, $line, $vars) {
-    	$email = "
-    		<p>An error ($number) occurred on line
-    		<strong>$line</strong> and in the <strong>file: $file.</strong>
-    		<p> $message </p>";
-    	$email .= "<pre>" . print_r($vars, 1) . "</pre>";
-    	$headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    	// Email the error to someone...
-    	error_log($email, 1, 'you@youremail.com', $headers);
-    	// Make sure that you decide how to respond to errors (on the user's side)
-    	// Either echo an error message, or kill the entire project. Up to you...
-    	// The code below ensures that we only "die" if the error was more than
-    	// just a NOTICE.
-    	if (($number !== E_NOTICE) && ($number < 2048)) {
-    		die("There was an error. Please try again later.");
-    	}
+      $email = "
+        <p>An error ($number) occurred on line
+        <strong>$line</strong> and in the <strong>file: $file.</strong>
+        <p> $message </p>";
+      $email .= "<pre>" . print_r($vars, 1) . "</pre>";
+      $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+      // Email the error to someone...
+      error_log($email, 1, 'you@youremail.com', $headers);
+      // Make sure that you decide how to respond to errors (on the user's side)
+      // Either echo an error message, or kill the entire project. Up to you...
+      // The code below ensures that we only "die" if the error was more than
+      // just a NOTICE.
+      if (($number !== E_NOTICE) && ($number < 2048)) {
+        die("There was an error. Please try again later.");
+      }
     }
 
     // We should use our custom function to handle errors.
@@ -175,7 +177,7 @@ This snippet will do this boring part of every PHP code with POST handling so yo
 
 (original source: http://www.catswhocode.com/blog/snippets/automatically-creates-variables)
 
-## Download & save a remote image on your server using PHP
+## Download and save a remote image on your server
 
 Here's a super easy and efficient way to download a remote image and save it on your own server.
 
@@ -202,15 +204,15 @@ When developing a multilingual website, I really like to retrieve the browser la
 
     function get_client_language($availableLanguages, $default='en') {
      if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    		$langs = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-    		foreach ($langs as $value){
-    			$choice = substr($value,0,2);
-    			if (in_array($choice, $availableLanguages)) {
-    				return $choice;
-    			}
-    		}
-    	}
-    	return $default;
+        $langs = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        foreach ($langs as $value){
+          $choice = substr($value,0,2);
+          if (in_array($choice, $availableLanguages)) {
+            return $choice;
+          }
+        }
+      }
+      return $default;
     }
 
 (original source: http://snipplr.com/view/12631/detect-browser-language/php-detect-browser-language)

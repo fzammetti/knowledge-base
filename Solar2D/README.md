@@ -1,7 +1,7 @@
 # Solar2D
 ----------
 
-## To ensure images to work on Android, use this checklist:
+## To ensure images to work on Android, use this checklist
 
 * Image has to be RGB color 8-bit
 * Image cannot have ICC embedded profile
@@ -10,14 +10,14 @@
 * If two or more files have the same name but different extensions that won't work
 * Correct uppercase/lowercase devices enforce that casing must match
 
-## General things you CANNOT do:
+## General things you CANNOT do
 
 * Use the file system to access files in subdirectories (off the Resource directory)
 * Use the file system to access image or html files in Resource directory
 * Have sound files in subdirectories
 * Have sound files with the same name but different extensions in the Resource directory
 
-## General things you CAN do:
+## General things you CAN do
 
 * Display images from the Resource directory
 * Display images from subdirectories (off the Resource directory)
@@ -27,7 +27,7 @@
 * Copy the above files from the Resource directory to the Documents or Temporary directory
 * Copy image and html files from the Resource directory to the Documents or Temporary directory by changing the file extension (e.g., ppp) and renaming it back to the original file name after the copy.
 
-## Debug Info Code:
+## Debug Info Code
 
     -- Debug info variables.
     underlay = nil,

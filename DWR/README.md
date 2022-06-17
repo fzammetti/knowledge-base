@@ -1,7 +1,7 @@
 # DWR
 ----------
 
-## Dynamically adding converts and creators to DWR's config at runtime:
+## Dynamically adding converts and creators to DWR's config at runtime
 
     import org.directwebremoting.ServerContext;
     import org.directwebremoting.extend.ConverterManager;

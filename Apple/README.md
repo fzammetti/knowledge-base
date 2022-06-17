@@ -1,7 +1,9 @@
 # Apple
 ----------
 
-## To configure a Mac OS X user account so that .DS_Store files are not created when interacting with a remote file server using Finder (note that this will affect the user's interactions with SMB/CIFS, AFP, NFS, and WebDAV servers):
+## Dealing with those annoying .DS_Store files
+
+To configure a Mac OS X user account so that **.DS_Store** files are not created when interacting with a remote file server using Finder (note that this will affect the user's interactions with SMB/CIFS, AFP, NFS, and WebDAV servers):
 
 1. Open Terminal
 

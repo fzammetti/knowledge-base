@@ -1,6 +1,6 @@
 # NodeJS
 ----------
 
-## To display Node version:
+## Display Node version
 
     console.log(process.version)

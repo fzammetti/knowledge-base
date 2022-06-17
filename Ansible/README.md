@@ -1,7 +1,7 @@
 # Ansible
 ----------
 
-## Create a directory (remember to set appropriate rights and owner!):
+## Create a directory (remember to set appropriate rights and owner!)
 
     - name: Create directory
       file:
@@ -11,7 +11,7 @@
         group: "root"
         state: "directory"
 
-## Unarchive a file (remember to set appropriate rights and owner!):
+## Unarchive a file (remember to set appropriate rights and owner!)
 
     - name: Unarchive file
       unarchive:
@@ -22,7 +22,7 @@
         owner: "root"
         group: "root"
 
-## Copy a file (remember to set appropriate rights and owner!):
+## Copy a file (remember to set appropriate rights and owner!)
 
     - name: Copy file
       copy:
@@ -33,14 +33,14 @@
         owner: "root"
         group: "root"
 
-## Delete a directory:
+## Delete a directory
 
     - name: Delete directory
       file:
         path: "<path>"
         state: absent
 
-## Download from Maven/Nexus repo (remember to set appropriate rights and owner!):
+## Download from Maven/Nexus repo (remember to set appropriate rights and owner!)
 
     - name: Download from Maven/Nexus repo
       maven_artifact:

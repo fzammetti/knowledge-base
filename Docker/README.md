@@ -1,12 +1,12 @@
 # Docker
 ----------
 
-## Install Docker on CentOS 7:
+## Install Docker on CentOS 7
 
     curl -fsSL https://get.docker.com/ | sh
     systemctl enable docker
 
-## Create a new container (Jenkins as the example, assuming you’ve already did docker pull \<image_name>):
+## Create a new container (Jenkins as the example, assuming you’ve already did docker pull \<image_name>)
 
     docker run -d -u 0 -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home --privileged --name jenkins jenkins/jenkins:lts
 
@@ -43,7 +43,7 @@ Note that for port and volume mappings, the format is always **\<host>:\<contain
 
 Note that you can do **docker logs -f \<container_name>** to follow the logs.
 
-## If Docker daemon is running but docker commands can't connect to it:
+## If Docker daemon is running but docker commands can't connect to it
 
 * If the docker group doesn't already exist, add it: **sudo groupadd docker**
 * Add the user that wants to run docker commands to it: **sudo usermod -aG docker \<username>**
@@ -54,7 +54,7 @@ Note that you can do **docker logs -f \<container_name>** to follow the logs.
 
     sudo service docker start
 
-## To build an image:
+## To build an image
 
 **docker login** (only needed if you're going to push to Docker Hub)
 In directory with dockerfile:
@@ -66,7 +66,7 @@ In directory with dockerfile:
     docker stop $(docker ps -a -q)
     docker rm $(docker ps -a -q)
 
-## To have one container talk to another:
+## To have one container talk to another
 
 For example, Confluence talking to PostgreSQL, you may need to configure the containers to use a custom user-defined network.  To set that network up, do:
 
