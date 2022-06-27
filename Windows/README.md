@@ -54,3 +54,29 @@
     reg add "hkcu\software\microsoft\command processor" /v PathCompletionChar /d 9 /t REG_DWORD /f
 
   Close and reopen Command Prompt for the change to take effect.
+
+## List and uninstall app (from administrator command prompt)
+
+  * Type: **wmic**\<enter>
+  * Type: **get product name**\<enter>
+  * Find app to uninstall and type: **product where name="\<name_of_program>"** call uninstlal
+  * Look for **ReturnValue = 0** at the end
+
+## Show full details about all logged in users (from administrator command prompt)
+
+    whoami /all
+
+## Reclaim ownership of any file or filder (from administrator command prompt)
+
+    takeown /f \<file_or_folder>
+
+  Note: Add /r to the end to take ownership of the full contents of a folder recursively
+
+## View all installed drivers on system (from administrator command prompt)
+
+    driverquery
+
+## List and kill tasks from command
+
+    tasklist
+    taskkill /im \<image_name>
