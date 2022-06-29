@@ -80,3 +80,31 @@
 
     tasklist
     taskkill /im \<image_name>
+
+## Start/stop a service from command line
+
+    sc start|stop “<service-name>”
+
+Note: this must be done from BNYM elevated command prompt
+
+## Configure startup type of a service from command line
+
+    sc config “<service-name>” start=<auto|boot}demand|disabled}system>
+
+Note: demand means manual
+
+## See domain user information
+
+    net user xedd3mx /domain
+
+Note: you can do /do instead of /domain too
+
+## The equivalent of touch for windows
+
+    copy /b <filename.ext> +,,
+
+## Download TLS cert from a server
+
+    openssl s_client -connect <url>:<port> -starttls <service_type>
+
+This requires OpenSSL be installed (which means you can do this from Linux just as well).  As an example, to download the cert from the BNY corporate SMTP server, the <url> would be smtpa.bnymellon.net, the <port> would be 587, and the <service_type> would be smtp.

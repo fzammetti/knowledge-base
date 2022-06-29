@@ -26,6 +26,10 @@
 
     adduser
 
+### List all groups
+
+    compgen -g
+
 ### Delete user or remove user from group
 
     deluser
@@ -141,6 +145,10 @@ To any of these, you can add *| {less|more}* to the end for better viewing.
 
     chmod
 
+### Get chmod numeric value of an existing file
+
+    stat --format '%a' <filename>
+
 ### Change user owner of a file or directory (can change group too)
 
     chown
@@ -174,7 +182,31 @@ To any of these, you can add *| {less|more}* to the end for better viewing.
 ### Generate an RSA keypair
 
     ssh-keygen -t rsa -b 4096
- 
+
+### View files between certain date/times
+
+    find -type f -newermt "2011-12-22 00:00:00" \! -newermt "2011-12-24 13:23:00"
+
+### Set access/modify/timestamp date/time on all files in directory to a specific date/time
+
+    touch -a -m -t 202205171500.00 *
+
+### Create TAR
+
+    tar -czvf <tar_filename>.tar.gz <target_directory>
+
+### Extract TAR
+
+    tar xvf <tar_filename>.tar.gz
+
+### Unzip ZIP archive
+
+    unzip <filename> "<file_to_extract>" -d <target_directory>
+
+<file_to_extract> is optional, without it all files in archive will be extracted
+
+
+
 ## Environment
 
 ### List all commands you could run
@@ -240,6 +272,14 @@ Assuming an APT-based system (like Ubuntu), you can do this in two steps.  First
 ### View systemd logs
 
     journalctl
+
+## Get IP address
+
+    ipaddr
+
+...or...
+
+    ifconfig -a
 
 ## Shell Scripting
 
@@ -449,6 +489,20 @@ Reboot and confirm:
 * User passwords: **/etc/shadow**
 * Group list: **/etc/group**
 
+### CURL upload file
+
+    curl -f -v -u <username>:<password> --upload-file <filename> "<path>/<filename>"
+
+### CURL download file
+
+    curl "<path>/<filename>" --output <filename>
+
+### CURL delete file
+
+    curl -f -v -u <userID>:<password> -X DELETE "<path>/<filename>"
+
+<filename> is optional, but be careful, without it the entire directory is deleted
+
 ## How to verify the integrity of a directory full of JPG files and only show those that aren't uncorrupted
 
     jpeginfo -c -v /<directory_name>/*.jpg | awk '$0 !~ /\[OK\]/'
@@ -481,3 +535,19 @@ Or, just use dos2unix if installed.
 ### Download an entire site with wget:
 
     wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --no-parent --domains <domain_name> <website_url>
+
+### Set up an SFTP server
+
+* Add group for SFTP users: **groupadd <group_name_whatever_you_want>**
+* Add a user: **useradd -g <group_name_from_above> <username>**
+* Set password: **<whatever_you_want>**
+* Create SFTP home directory for user: **mkdir -p /sftp_data/sftp_user/upload**
+* Set privs on directory part 1: **chown -R root.sftp_users /sftp_data/sftp_user**
+* Set privs on directory part 2: **chown -R sftp_user.sftp_users /sftp_data/sftp_user/upload**
+* Edit **/etc/ssh/sshd_config**, add to bottom:
+
+      Match Group sftp_users
+      ChrootDirectory /sftp_data/%u
+      ForceCommand internal-sftp
+
+* Start daemon: **service ssh start**

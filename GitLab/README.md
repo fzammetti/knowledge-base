@@ -52,3 +52,7 @@ Confirm the proper settings are shown.
     Notify.test_email('frank@zammetti.com', 'Hello World', 'This is a test message').deliver_now
 
 Confirm email is received properly.
+
+## Skipping GitLab CI/CD pipeline
+
+To skip CI/CD pipeline, add **[ci skip]** or **[skip ci]** to commit message
