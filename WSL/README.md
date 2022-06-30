@@ -1,24 +1,24 @@
 # WSL
 ----------
 
-##  List installed distros
+## List installed distros
 
     wsl --list –all
 
-##  Export distro
+## Export distro
 
     wsl --export <distro_name> ./<distro_name>.tar
 
-##  Import distro
+## Import distro
 
     mkdir ~/AppData/Local/<distro_name>
     wsl --import <distro_name> ~/AppData/Local/<distro_name> ./<distro_name>.tar --version 1|2
 
-##  To start Docker Daemon in WSL2
+## To start Docker Daemon in WSL2
 
     /etc/init.d/docker start
 
-##  To install Docker in Ubuntu
+## To install Docker in Ubuntu
 
 The official installation instructions here: https://docs.docker.com/engine/install/ubuntu
 
@@ -33,3 +33,15 @@ But, the basic procedure is:
     apt install docker-ce docker-ce-cli containerd.io
 
 Then, start the daemon as described above and run **docker run hello-world** to test
+
+## Use cron in WSL
+
+* Create a shortcut to start cron in WSL when you log in.  Open startup folder:
+
+      Run shell:statup
+
+* Create a shortcut, target:
+
+      C:\Windows\System32\wsl.exe sudo /etc/init.d/cron start
+
+Now you can create cron jobs like always and they'll execute in WSL.
