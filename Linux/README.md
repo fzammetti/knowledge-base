@@ -507,6 +507,10 @@ Reboot and confirm:
 
     jpeginfo -c -v /<directory_name>/*.jpg | awk '$0 !~ /\[OK\]/'
 
+## Show information about all videos in the current directory and send to a file
+
+    exiftool * > videoinfo.txt
+
 ### Read mail:
 
     mail
