@@ -336,6 +336,15 @@ Assuming an APT-based system (like Ubuntu), you can do this in two steps.  First
 
     function-name() { #some code here return }
 
+## Fedora-Specific (probably... mostly... kinda... sorta...)
+
+### Install KDE and switchdesk to be able to make it default
+
+    dnf install @kde-desktop-environment
+    dnf install switchdesk switchdesk-gui
+
+You can then either run the Desktop Switching Tool GUI, or from command line: **switchdesk kde**
+
 ## CentOS-Specific (probably... mostly... kinda... sorta...)
 
 ### Get active firewall zone
