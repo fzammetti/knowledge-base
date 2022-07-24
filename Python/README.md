@@ -27,3 +27,9 @@
 ## Upgrade all packages (Windows only, must execute in Powershell)
 
     pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+
+## Upgrade Pip, avoiding frequent errors
+
+    python -m pip uninstall pip
+    python -m ensurepip
+    python -m pip install -U pip
