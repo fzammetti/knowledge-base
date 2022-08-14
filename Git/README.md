@@ -77,3 +77,11 @@ Finally, force-push to the remote (note that you must unprotect the branch in Gi
 
     git remote add origin <repo_url_from_gitlab>
     git push -u --force origin master
+
+## Count the number of lines in files in a Git repo
+
+    git ls-files | xargs wc -l
+
+To limit to only certain types of files, .css for example:
+
+    git ls-files | grep css | xargs wc -l
