@@ -108,3 +108,19 @@ Note: you can do /do instead of /domain too
     openssl s_client -connect <url>:<port> -starttls <service_type>
 
 This requires OpenSSL be installed (which means you can do this from Linux just as well).  As an example, to download the cert from the BNY corporate SMTP server, the <url> would be smtpa.bnymellon.net, the <port> would be 587, and the <service_type> would be smtp.
+
+## Delete a driver from the command line
+
+This first came about when I tried to enable Core Isolation Memory Integrity on my server and Windows wouldn't let me due to some old Western Digital drivers used for an external hard drive.  This drivers were not compatible with this protection, but because they were no longer used, there was no obvious way to remove them.  So, to solve that problem:
+
+* Open an administrative command prompt
+
+* Execute the command:
+
+        pnputil /enum-devices /connected
+
+    Go through the output and make sure the driver you want to remove isn't listed for any device.
+
+* After confirming, execute the command:
+
+        pnputil /delete-driver <driver_published_name> /uninstall /force /reboot
