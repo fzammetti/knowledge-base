@@ -549,7 +549,7 @@ Or, just use dos2unix if installed.
 
     wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --no-parent --domains <domain_name> <website_url>
 
-## Download a list of URLs from a file while maintaining directory structure:
+## Download a list of URLs from a file while maintaining directory structure with wget:
 
     wget -x -nH -i <filename>
 
