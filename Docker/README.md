@@ -84,3 +84,15 @@ For example:
     docker run -d -u 0 -p 5432:5432 -v /data/postgres:/var/lib/postgresql/data --privileged --name postgres --network=docker-net -e POSTGRES_PASSWORD=my_password postgres
 
 Note that in a container, to reference these, you use the container name as the hostname.  For example, when setting up Confluence to use a Postgres container, the hostname you specify in the Confluence setup wizard is **postgres** (assuming that’s name as in the above example).
+
+## Move Docker directory (CentOS, maybe others)
+
+* Stop docker: service docker stop
+* Verify no docker process running: ps faux
+* Copy /var/lib/docker directory to your new partition: cp /var/lib/docker /home/docker
+* Rename original directory: mv docker docker-old
+* Make a symlink: ln -s /home/docker /var/lib/docker
+* Confirm directory contents: ls /home/docker
+* Restart docker: service docker start
+* Restart containers as necessary
+* Confirm containers are running properly, then delete old directory: rm -rf /var/lib/docker-old
