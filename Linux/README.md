@@ -549,6 +549,10 @@ Or, just use dos2unix if installed.
 
     wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --no-parent --domains <domain_name> <website_url>
 
+## Download a list of URLs from a file while maintaining directory structure with wget:
+
+    wget -x -nH -i <filename>
+
 ### Set up an SFTP server
 
 * Add group for SFTP users: **groupadd <group_name_whatever_you_want>**
