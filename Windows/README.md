@@ -124,3 +124,11 @@ This first came about when I tried to enable Core Isolation Memory Integrity on 
 * After confirming, execute the command:
 
         pnputil /delete-driver <driver_published_name> /uninstall /force /reboot
+
+## Manually edit service start (for when startup type is greyed out in UI)
+
+Expand **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services** key in RegEdit, look for service name (as shown in
+properties dialog for the service).  Edit the **Start** key value as follows:
+* 2 = Automatic
+* 3 = Manual
+* 4 = Disabled
