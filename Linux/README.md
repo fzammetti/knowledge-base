@@ -347,6 +347,13 @@ You can then either run the Desktop Switching Tool GUI, or from command line: **
 
 ## CentOS-Specific (probably... mostly... kinda... sorta...)
 
+### GPG key errors during yum install or yum update
+If you get errors doing a yum install or yum update that talks about GPG keys not being valid, one (VERY UNSAFE!)
+way to get around it is to go into the /etc/yum.conf file and set gpgcheck=0 in the [main] section.  You may also
+need to go into the .conf files for individual repos under /etc/yum.repos.d and set it there as well, and note that
+those repo files can have multiple entries that you need to set.  A value of 0 means no key checks, 1 means check
+keys.  THIS SHOULD ONLY BE A SHORT-TERM FIX, since you open yourself up to malicious packages without key checking.
+
 ### Get active firewall zone
 
     firewall-cmd --get-active-zones
