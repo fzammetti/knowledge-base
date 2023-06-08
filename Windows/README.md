@@ -132,3 +132,9 @@ properties dialog for the service).  Edit the **Start** key value as follows:
 * 2 = Automatic
 * 3 = Manual
 * 4 = Disabled
+
+# Clear all Windows event logs
+
+    for /F "tokens=*" %1 in ('wevtutil.exe el') DO wevtutil.exe cl "%1"
+
+This MUST be run from an elevated command prompt.
