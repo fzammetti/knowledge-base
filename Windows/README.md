@@ -201,8 +201,6 @@ or PowerShell prompts.**
 
     sc start|stop “<service-name>”
 
-Note: this must be done from BNYM elevated command prompt
-
 
 
 
@@ -301,8 +299,6 @@ properties dialog for the service).  Edit the **Start** key value as follows:
 </div>
 
     for /F "tokens=*" %1 in ('wevtutil.exe el') DO wevtutil.exe cl "%1"
-
-This MUST be run from an elevated command prompt.
 
 
 
