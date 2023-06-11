@@ -1,7 +1,19 @@
 # Regex
-----------
+
+---
+
+* [Select all characters in a string from a specified character](#a014f377-aa96-4423-9c4a-b3fff746c005)
+
+---
+
+
+
+
+<div id="a014f377-aa96-4423-9c4a-b3fff746c005">
 
 ## Select all characters in a string from a specified character
+
+</div>
 
     s.*
 

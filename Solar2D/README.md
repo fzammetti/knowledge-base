@@ -1,7 +1,23 @@
 # Solar2D
-----------
+
+---
+
+* [To ensure images to work on Android, use this checklist](#2514197c-4fe9-4563-a513-43ef1025c562)
+* [General things you CANNOT do](#d42dfbda-91a7-4c79-b08b-e7ee54c93a23)
+* [General things you CAN do](#1ac906cc-e568-4029-80ac-3a7d01e64bd8)
+* [Debug Info Code](#e990dd52-2556-437d-a724-a4b558a36eb7)
+* [Letterbox Scaling Info](#a01cfe21-5385-45b2-b832-e49532149d53)
+
+---
+
+
+
+
+<div id="2514197c-4fe9-4563-a513-43ef1025c562">
 
 ## To ensure images to work on Android, use this checklist
+
+</div>
 
 * Image has to be RGB color 8-bit
 * Image cannot have ICC embedded profile
@@ -10,14 +26,28 @@
 * If two or more files have the same name but different extensions that won't work
 * Correct uppercase/lowercase devices enforce that casing must match
 
+
+
+
+<div id="d42dfbda-91a7-4c79-b08b-e7ee54c93a23">
+
 ## General things you CANNOT do
+
+</div>
 
 * Use the file system to access files in subdirectories (off the Resource directory)
 * Use the file system to access image or html files in Resource directory
 * Have sound files in subdirectories
 * Have sound files with the same name but different extensions in the Resource directory
 
+
+
+
+<div id="1ac906cc-e568-4029-80ac-3a7d01e64bd8">
+
 ## General things you CAN do
+
+</div>
 
 * Display images from the Resource directory
 * Display images from subdirectories (off the Resource directory)
@@ -27,7 +57,14 @@
 * Copy the above files from the Resource directory to the Documents or Temporary directory
 * Copy image and html files from the Resource directory to the Documents or Temporary directory by changing the file extension (e.g., ppp) and renaming it back to the original file name after the copy.
 
+
+
+
+<div id="e990dd52-2556-437d-a724-a4b558a36eb7">
+
 ## Debug Info Code
+
+</div>
 
     -- Debug info variables.
     underlay = nil,
@@ -83,7 +120,7 @@
       utils.underlay:setReferencePoint(display.TopLeftReferencePoint);
       utils.underlay:setFillColor(0, 0, 0, 128);
       utils.displayInfo = display.newText(
-        "xxx", 0, 0, native.systemFontBold, 20
+        "<test>", 0, 0, native.systemFontBold, 20
       );
       utils.displayInfo.x = display.contentCenterX;
       utils.displayInfo.y = display.contentHeight - 14;
@@ -105,7 +142,11 @@
 
 
 
+<div id="a01cfe21-5385-45b2-b832-e49532149d53">
+
 ## Letterbox Scaling Info
+
+</div>
 
 Let's assume you're coding on portrait orientation.
 

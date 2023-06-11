@@ -1,7 +1,19 @@
 # Miscellaneous
-----------
+
+---
+
+* [To download an entire collection from the Internet Archives](#878ae23c-4921-478b-a629-9f635313f7f2)
+
+---
+
+
+
+
+<div id="878ae23c-4921-478b-a629-9f635313f7f2">
 
 ## To download an entire collection from the Internet Archives
+
+</div>
 
 First, go to archive.org and do an Advanced Search.  In the 'Advanced Search returning JSON, XML, and more' section,
 entire a search term that gets you the collection you want, and select 'identifier' in the 'Fields to return' box.

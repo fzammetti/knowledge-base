@@ -1,7 +1,21 @@
 # GitLab
-----------
+
+---
+
+* [How to remove a CI/CD runner in GitLab](#0316097f-1ff4-42b5-b370-ca21806a237d)
+* [To configure SMTP in GitLab (using non-SSL SMTP server)](#0c285472-9577-480e-ae55-fe88eb9400dc)
+* [Skipping GitLab CI/CD pipeline](#ee700974-96aa-41b5-a0e8-40ee71994a7f)
+
+---
+
+
+
+
+<div id="0316097f-1ff4-42b5-b370-ca21806a237d">
 
 ## How to remove a CI/CD runner in GitLab
+
+</div>
 
     gitlab-runner unregister --name <name>
     gitlab-runner verify –delete
@@ -9,7 +23,14 @@
     gitlab-runner verify
     gitlab-runner list
 
+
+
+
+<div id="0c285472-9577-480e-ae55-fe88eb9400dc">
+
 ## To configure SMTP in GitLab (using non-SSL SMTP server)
+
+</div>
 
 NOTE: I suspect this has to be re-done after every GitLab update.
 
@@ -53,6 +74,13 @@ Confirm the proper settings are shown.
 
 Confirm email is received properly.
 
+
+
+
+<div id="ee700974-96aa-41b5-a0e8-40ee71994a7f">
+
 ## Skipping GitLab CI/CD pipeline
+
+</div>
 
 To skip CI/CD pipeline, add **[ci skip]** or **[skip ci]** to commit message

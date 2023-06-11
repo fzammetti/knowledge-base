@@ -1,7 +1,19 @@
 # DWR
-----------
+
+---
+
+* [Dynamically adding converts and creators to DWR's config at runtime](#1f06212d-fc6a-4410-a9d4-a52f87be4e78)
+
+---
+
+
+
+
+<div id="1f06212d-fc6a-4410-a9d4-a52f87be4e78">
 
 ## Dynamically adding converts and creators to DWR's config at runtime
+
+</div>
 
     import org.directwebremoting.ServerContext;
     import org.directwebremoting.extend.ConverterManager;

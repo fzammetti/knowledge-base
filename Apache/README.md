@@ -1,7 +1,21 @@
 # Apache
-----------
 
-## To configure Apache to proxy for an app running on a Tomcat server on port 8080, in **httpd.conf**
+---
+
+* [Configure Apache to proxy for an app running on Tomcat](#a6e645e7-e82e-46d4-8f30-cf6737a8f481)
+
+---
+
+
+
+
+<div id="a6e645e7-e82e-46d4-8f30-cf6737a8f481">
+
+## Configure Apache to proxy for an app running on Tomcat
+
+</div>
+
+To configure Apache to proxy for an app running on a Tomcat server on port 8080, in **httpd.conf**:
 
     ProxyPass /<app_name>/ http://<server_name>:8080/
     ProxyPassReverse /<app_name>/ http://<server_name>:8080/

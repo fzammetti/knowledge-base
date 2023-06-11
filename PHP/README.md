@@ -1,7 +1,29 @@
 # PHP
-----------
+
+---
+
+* [Parse posted JSON request](#c6c43f64-ea0e-48a9-ab38-5b76d0620126)
+* [Sanitize database inputs](#9f740365-ce27-48b8-a01b-e4e0aa211812)
+* [Calculate distance between two points](#ab1c95c8-04dc-44b7-aca2-690e1d1b18a9)
+* [Here's a quick and easy way to get all tweets of a specific usage using the useful cURL library.](#c60b1d06-13b0-45cb-8667-667402af9107)
+* [Applying even/odd classes](#4f91219f-18d4-46aa-b545-90515b243006)
+* [Email error logs to yourself](#3de5138f-4246-4b6f-8765-5db0c3be1009)
+* [Automatically creates variables with the same name as the key in the POST array](#50f7448a-5a49-47cd-a4f2-06d38e8e8176)
+* [Download and save a remote image on your server](#f9097bb9-3138-4ea5-b3c5-f933c96ed021)
+* [Create data URIs](#414de339-c5d8-4a1b-91e0-84a8cf4403e9)
+* [Detect browser language](#42900092-df0e-43db-a0b0-25cb32dac650)
+* [Add (th, st, nd, rd, th) to the end of a number](#4fe865ce-e7ae-4278-a361-3c4fc94fc9b1)
+
+---
+
+
+
+
+<div id="c6c43f64-ea0e-48a9-ab38-5b76d0620126">
 
 ## Parse posted JSON request
+
+</div>
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $postBody = file_get_contents("php://input");
@@ -10,7 +32,14 @@
       echo "field1=" . field1;
     }
 
+
+
+
+<div id="9f740365-ce27-48b8-a01b-e4e0aa211812">
+
 ## Sanitize database inputs
+
+</div>
 
 When inserting data in your database, you have to be really careful about SQL injections and other attempts to insert malicious data into the db. The function below is probably the most complete and efficient way to sanitize a string before using it with your database in PHP:
 
@@ -53,7 +82,14 @@ Here are some examples of use:
 
 (original source: http://css-tricks.com/snippets/php/sanitize-database-inputs)
 
+
+
+
+<div id="ab1c95c8-04dc-44b7-aca2-690e1d1b18a9">
+
 ## Calculate distance between two points
+
+</div>
 
 Want to be able to calculate the distance between two points on a map? The function below use the latitude and longitude of two locations, and calculate the distance between them in both miles and metric units.
 
@@ -85,7 +121,14 @@ Example:
 
 Get all tweets of a specific hashtag
 
+
+
+
+<div id="c60b1d06-13b0-45cb-8667-667402af9107">
+
 ## Here's a quick and easy way to get all tweets of a specific usage using the useful cURL library.
+
+</div>
 
 The following example will retrieve all tweets with the #cat hashtag:
 
@@ -115,7 +158,14 @@ The following example will retrieve all tweets with the #cat hashtag:
 
 (original source: http://www.inkplant.com/code/get-twitter-posts-by-hashtag.php)
 
+
+
+
+<div id="4f91219f-18d4-46aa-b545-90515b243006">
+
 ## Applying even/odd classes
+
+</div>
 
 When generating lists or tables using php, it is super useful to apply even/odd classes to each row of data in order to simplify CSS styling.
 
@@ -125,7 +175,14 @@ Used inside a loop, class names would be named .example-class0 and .example-clas
 
 (original source: http://css-tricks.com/snippets/php/applying-evenodd-classes)
 
+
+
+
+<div id="3de5138f-4246-4b6f-8765-5db0c3be1009">
+
 ## Email error logs to yourself
+
+</div>
 
 Instead of publicly displaying possible errors on your website, why not using a custom error handler to email error logs to yourself? Here's a handy code snippet to do it.
 
@@ -156,7 +213,14 @@ Instead of publicly displaying possible errors on your website, why not using a 
 
 (original source: http://net.tutsplus.com/tutorials/php/quick-tip-email-error-logs-to-yourself-with-php)
 
+
+
+
+<div id="50f7448a-5a49-47cd-a4f2-06d38e8e8176">
+
 ## Automatically creates variables with the same name as the key in the POST array
+
+</div>
 
 This snippet is very helpful for every POST processing. All you need is an array with expected keys in the POST array. This snippet automatically creates variables with the same name as the key in the POST array. If the key is not found in the POST array the variable is set to NULL. Basically you dont need to write:
 
@@ -177,7 +241,14 @@ This snippet will do this boring part of every PHP code with POST handling so yo
 
 (original source: http://www.catswhocode.com/blog/snippets/automatically-creates-variables)
 
+
+
+
+<div id="f9097bb9-3138-4ea5-b3c5-f933c96ed021">
+
 ## Download and save a remote image on your server
+
+</div>
 
 Here's a super easy and efficient way to download a remote image and save it on your own server.
 
@@ -186,7 +257,14 @@ Here's a super easy and efficient way to download a remote image and save it on 
 
 (original source: http://www.catswhocode.com/blog/snippets/download-save-a-remote-image)
 
+
+
+
+<div id="414de339-c5d8-4a1b-91e0-84a8cf4403e9">
+
 ## Create data URIs
+
+</div>
 
 Data URIs can be useful for embedding images into HTML/CSS/JS to save on HTTP requests, at the cost of maintainability. You can use online tools to create data URIs, or you can use the simple PHP function below:
 
@@ -198,7 +276,14 @@ Data URIs can be useful for embedding images into HTML/CSS/JS to save on HTTP re
 
 (original source: http://css-tricks.com/snippets/php/create-data-uris)
 
+
+
+
+<div id="42900092-df0e-43db-a0b0-25cb32dac650">
+
 ## Detect browser language
+
+</div>
 
 When developing a multilingual website, I really like to retrieve the browser language and use this language as the default language for my website. Here's how I get the language used by the client browser:
 
@@ -217,7 +302,14 @@ When developing a multilingual website, I really like to retrieve the browser la
 
 (original source: http://snipplr.com/view/12631/detect-browser-language/php-detect-browser-language)
 
+
+
+
+<div id="4fe865ce-e7ae-4278-a361-3c4fc94fc9b1">
+
 ## Add (th, st, nd, rd, th) to the end of a number
+
+</div>
 
 This simple and easy function will take a number and add "th, st, nd, rd, th" after it. Very useful!
 

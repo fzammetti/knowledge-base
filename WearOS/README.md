@@ -1,7 +1,19 @@
 # WearOS
-----------
+
+---
+
+* [Disable screen off for WearOS 5](#9feecfea-1a8b-4343-a284-0e85f03b6076)
+
+---
+
+
+
+
+<div id="9feecfea-1a8b-4343-a284-0e85f03b6076">
 
 ## Disable screen off for WearOS 5
+
+</div>
 
 Access watch with wearOS5 using ADB, then execute command:
 
