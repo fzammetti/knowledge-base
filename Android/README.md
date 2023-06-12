@@ -133,7 +133,13 @@ Hold volume down + home + power
 
 Hold volume up + home + power
 
-(note: this is not true for all phones!  For Fold4, it's hold volume down + power, wait until you see the Android logo, then let go)
+(note: this is not true for all phones!)
+
+Specifically for Fold 4:
+1. Start with the phone ON.
+2. Hold Volume Down + Power, choose Power Off when the shutdown menu appears.
+3. Wait a few seconds after the screen goes blank to ensure it's off.
+4. Hold Volume Up and Power until the Android logo appears, then release.  Recovery mode should appear in a few seconds.
 
 
 
