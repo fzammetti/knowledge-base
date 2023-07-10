@@ -15,6 +15,8 @@
 * [To stop ALL running containers and then delete ALL containers](#9fbf7076-ff29-4956-a976-606134f3529f)
 * [To have one container talk to another](#c28351f7-e132-4820-8371-687a7fa47270)
 * [Move Docker directory (CentOS, maybe others)](#b0231ccb-865b-47b4-bef2-9326a9942863)
+* [Remove all unused images](#03d9296f-22c0-442b-9f22-95a1b5470620)
+* [Destructively clean up Docker](#bfa4a295-1d0e-401f-be5f-9a21ddd504b1)
 
 ---
 
@@ -204,3 +206,31 @@ Note that in a container, to reference these, you use the container name as the 
 * Restart docker: service docker start
 * Restart containers as necessary
 * Confirm containers are running properly, then delete old directory: rm -rf /var/lib/docker-old
+
+
+
+
+<div id="03d9296f-22c0-442b-9f22-95a1b5470620">
+
+## Remove all unused images
+
+</div>
+
+WARNING! This will remove all images without at least one container associated to them.
+
+    docker image prune -a
+
+
+
+
+<div id="bfa4a295-1d0e-401f-be5f-9a21ddd504b1">
+
+## Destructively clean up Docker
+
+</div>
+
+WARNING! This will delete ALL containers, images and networks! It is destructive and irreversible!
+
+    docker system prune -a -f
+    docker builder prune
+    find /var/lib/docker/containers/ -type f -name "*.log" -delete
