@@ -107,6 +107,7 @@
 * [Download an entire site with wget](#e527e525-c611-4d2e-b4f5-863a59f9d63d)
 * [Download a list of URLs from a file while maintaining directory structure with wget](#ecc15601-e277-47e9-a5dc-f774fc95856f)
 * [Set up an SFTP server](#613a1e17-1636-45b7-ad23-0df92b0f41c1)
+* [Compare two files line by line and list any lines in each not in the other](#b17ab9d3-19bf-411e-93b6-00341817e222)
 
 ---
 
@@ -1427,3 +1428,14 @@ Or, just use dos2unix if installed.
       ForceCommand internal-sftp
 
 * Start daemon: **service ssh start**
+
+
+
+
+<div id="b17ab9d3-19bf-411e-93b6-00341817e222">
+
+## Compare two files line by line and list any lines in each not in the other
+
+</div>
+
+    comm -3 <(sort file1.txt) <(sort file2.txt)
