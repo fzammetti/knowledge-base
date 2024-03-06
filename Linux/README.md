@@ -69,7 +69,7 @@
 * [Case statement](#c51eab49-0794-44be-a6fd-bf106e2658f8)
 * [Read keyboard input](#5870bb2a-ca4c-4407-a079-808d8a4721ae)
 * [Define a function](#517d82f6-1457-45b7-a129-2514c0aba809)
-* [Install KDE and switchdesk to be able to make it default](#9b3b1823-ac07-4a59-964f-9d3e3d5e3b44)
+* [Fedora Install KDE and switchdesk to be able to make it default](#9b3b1823-ac07-4a59-964f-9d3e3d5e3b44)
 * [GPG key errors during yum install or yum update](#c0734290-11c6-4e3c-aab6-b869210cb3bf)
 * [Get active firewall zone](#c374b672-3ef8-4e7e-8251-e4715c8cc4ff)
 * [List firewall services on a zone](#89d5ae1c-b4f4-4946-b278-7dced366d8d9)
@@ -108,6 +108,7 @@
 * [Download a list of URLs from a file while maintaining directory structure with wget](#ecc15601-e277-47e9-a5dc-f774fc95856f)
 * [Set up an SFTP server](#613a1e17-1636-45b7-ad23-0df92b0f41c1)
 * [Compare two files line by line and list any lines in each not in the other](#b17ab9d3-19bf-411e-93b6-00341817e222)
+* [Fedora upgrade to a specific version](#8d33d69b-2878-4914-9e4d-5c422254c913)
 
 ---
 
@@ -910,11 +911,11 @@ Assuming an APT-based system (like Ubuntu), you can do this in two steps.  First
 
 <div id="9b3b1823-ac07-4a59-964f-9d3e3d5e3b44">
 
-## Install KDE and switchdesk to be able to make it default
+## Fedora Install KDE and switchdesk to be able to make it default
 
 </div>
 
-Note: Probably Fedora-specific
+Note: Fedora-specific, might possibly work on others
 
     dnf install @kde-desktop-environment
     dnf install switchdesk switchdesk-gui
@@ -1439,3 +1440,16 @@ Or, just use dos2unix if installed.
 </div>
 
     comm -3 <(sort file1.txt) <(sort file2.txt)
+
+
+
+
+<div id="8d33d69b-2878-4914-9e4d-5c422254c913">
+
+## Fedora upgrade to a specific version
+
+</div>
+
+    sudo dnf upgrade --refresh
+    sudo dnf install dnf-plugin-system-upgrade
+    sudo dnf system-upgrade download --releasever=39
