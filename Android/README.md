@@ -136,6 +136,11 @@ Hold volume up + home + power
 (note: this is not true for all phones!)
 
 Specifically for Fold 4:
+1. Start with the phone OFF.
+2. Press and hold the side key (power) and the volume buttons.
+3. Release the side key once the phone turns on (keep volume up button pressed until menu appears).
+
+Alternate method:
 1. Start with the phone ON.
 2. Hold Volume Down + Power, choose Power Off when the shutdown menu appears.
 3. Wait a few seconds after the screen goes blank to ensure it's off.
