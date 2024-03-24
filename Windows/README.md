@@ -26,7 +26,7 @@ or PowerShell prompts.**
 * [Manually edit service start (for when startup type is greyed out in UI)](#ada5e549-524b-40e3-be40-af730221c27a)
 * [Clear all Windows event logs](#6aecab68-b733-430f-92e5-1230fe0031ff)
 * [Important Registry locations](#658259b5-57cc-4192-b6b5-7469b000d759)
-* [To turn hibernation on or off] (#76c0c982-f595-467c-87d8-cfa70642d1b9)
+* [To turn hibernation on or off](#76c0c982-f595-467c-87d8-cfa70642d1b9)
 
 ---
 
