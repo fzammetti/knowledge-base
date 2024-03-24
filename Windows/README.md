@@ -26,6 +26,7 @@ or PowerShell prompts.**
 * [Manually edit service start (for when startup type is greyed out in UI)](#ada5e549-524b-40e3-be40-af730221c27a)
 * [Clear all Windows event logs](#6aecab68-b733-430f-92e5-1230fe0031ff)
 * [Important Registry locations](#658259b5-57cc-4192-b6b5-7469b000d759)
+* [To turn hibernation on or off[ (#76c0c982-f595-467c-87d8-cfa70642d1b9)
 
 ---
 
@@ -314,3 +315,15 @@ properties dialog for the service).  Edit the **Start** key value as follows:
 
 * **Services**: Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services (start: 0=Boot, 1=System, 2=Automatic, 3=Manual, 4=Disabled)
 * **Explorer shell overlays**: Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+
+
+
+
+<div id="76c0c982-f595-467c-87d8-cfa70642d1b9">
+
+## To turn hibernation on or off (delets hiberfil.sys file in root of C):
+
+</div>
+
+    powercfg /hibernate on
+    powercfg /hibernate off
