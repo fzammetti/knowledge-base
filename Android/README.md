@@ -145,6 +145,7 @@ Specifically for Fold 4 recovery mode:
   1. Start with the phone OFF.
   2. Press and hold the side key (power) and the volume up button.
   3. Release the side key once the phone turns on but keep volume up button pressed until menu appears.
+
 Specifically for Fold 4 download mode:
   1. Start with the phone OFF.
   2. Press and hold the side key (power) and BOTH volume buttons.
