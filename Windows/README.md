@@ -27,6 +27,7 @@ or PowerShell prompts.**
 * [Clear all Windows event logs](#6aecab68-b733-430f-92e5-1230fe0031ff)
 * [Important Registry locations](#658259b5-57cc-4192-b6b5-7469b000d759)
 * [To turn hibernation on or off](#76c0c982-f595-467c-87d8-cfa70642d1b9)
+* [Disable the Windows Welcome Experience](#7bfeb95d-6447-4768-bc3f-8cfdb6615472)
 
 ---
 
@@ -327,3 +328,18 @@ properties dialog for the service).  Edit the **Start** key value as follows:
 
     powercfg /hibernate on
     powercfg /hibernate off
+
+
+
+
+<div id="7bfeb95d-6447-4768-bc3f-8cfdb6615472">
+
+## Disable the Windows Welcome Experience
+
+The Windows Welcome Experience shows up after major updates.  It can be disabled by disabling it in notification
+settings:
+
+* Settings->System->Notifications->Additional Settings
+* Uncheck 'Show me the Windows welcome experience after updates and occasionally when I sign in to highlight what’s new and suggested'
+* Uncheck 'Suggest ways to get the most out of Windows and finish setting up the device'
+* Uncheck 'Offer suggestions on how I can set up my device''
