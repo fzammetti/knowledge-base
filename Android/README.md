@@ -18,6 +18,7 @@
 * [Procedure to make SD card writable by third-party apps on Android 4.4+](#f813ccb9-62d7-460e-bb8a-241b989a80ac)
 * [Procedure to flash just one partition on a Galaxy S5](#19edd8c5-c983-4bfb-80d6-235060c220d4)
 * [Flash an update without wiping phone (Galaxy S5)](#6378f5c6-e1ea-401a-b293-4701057cb880)
+* [Get around an SDK version block to install an app](#45d88660-9570-4de4-bd2d-d377cd828e4c)
 
 ---
 
@@ -283,3 +284,24 @@ If you want to flash a single stock partition such as boot, recovery or even sys
 * Add the firmware file to PDA.  Make sure re-partition is NOT ticked!
 * Reboot phone in Download Mode (press and hold Home + Power + Volume Down).
 * Click the start button, sit back and wait a few minutes.
+
+
+
+
+<div id="45d88660-9570-4de4-bd2d-d377cd828e4c">
+
+## Get around an SDK version block to install an app
+
+</div>
+
+On an Android device you can connect to ADB and sideload an application with:
+
+    adb install name_of_package.apk
+
+This may result in this error:
+
+    INSTALL_FAILED_DEPRECATED_SDK_VERSION: App package must target at least SDK version 23, but found 22
+
+To overcome this error and install the application anyway, use:
+
+    adb install --bypass-low-target-sdk-block name_of_package.apk
