@@ -28,6 +28,7 @@ or PowerShell prompts.**
 * [Important Registry locations](#658259b5-57cc-4192-b6b5-7469b000d759)
 * [To turn hibernation on or off](#76c0c982-f595-467c-87d8-cfa70642d1b9)
 * [Disable the Windows Welcome Experience](#7bfeb95d-6447-4768-bc3f-8cfdb6615472)
+* [Reboot into BIOS/UEFI](#06a70476-c3f4-439a-ac84-725d98207863)
 
 ---
 
@@ -343,3 +344,14 @@ settings:
 * Uncheck 'Show me the Windows welcome experience after updates and occasionally when I sign in to highlight what’s new and suggested'
 * Uncheck 'Suggest ways to get the most out of Windows and finish setting up the device'
 * Uncheck 'Offer suggestions on how I can set up my device''
+
+
+
+
+<div id="06a70476-c3f4-439a-ac84-725d98207863">
+
+## Reboot into BIOS/UEFI
+
+Execute this command from a command prompt to restart the machine into BIOS/UEFI:
+
+    shutdown /r /fw /t 0
