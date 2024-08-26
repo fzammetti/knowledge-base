@@ -8,6 +8,7 @@
 * [To start Docker Daemon in WSL2](#3eac9c37-3262-419c-8c2b-789fd508da66)
 * [To install Docker in Ubuntu](#73cc3a41-01e0-45bc-8c43-407672e6c1bb)
 * [Use cron in WSL](#69a8799f-1563-4858-8ae3-a155b12fa3cc)
+* [DNS not working when Internet access is](#a8323ee0-0db0-42ee-ae2a-a931329aba6b)
 
 ---
 
@@ -97,3 +98,28 @@ Then, start the daemon as described above and run **docker run hello-world** to 
       C:\Windows\System32\wsl.exe sudo /etc/init.d/cron start
 
 Now you can create cron jobs like always and they'll execute in WSL.
+
+
+
+
+<div id="a8323ee0-0db0-42ee-ae2a-a931329aba6b">
+
+## DNS not working when Internet access is
+
+</div>
+
+If you hit the situation where you can ping an IP address on the Internet (like google.com for example), but pinging
+google.com doesn't work - meaning DNS resolution is failing - one thing to check is /etc/wsl.conf.  Add it if not
+present, and ensure the following lines are in it:
+
+    [network]
+    generateHosts = false
+    GenerateResolvConf = false
+
+Then, add the file /etc/resolv.conf as follows:
+
+    nameserver <ip address>
+    ...as many as you want
+
+The settings in wsl.conf ensure that resolv.conf isn't generated when WSL starts up.  This should get name resolution
+working.
