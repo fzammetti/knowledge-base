@@ -29,6 +29,7 @@ or PowerShell prompts.**
 * [To turn hibernation on or off](#76c0c982-f595-467c-87d8-cfa70642d1b9)
 * [Disable the Windows Welcome Experience](#7bfeb95d-6447-4768-bc3f-8cfdb6615472)
 * [Reboot into BIOS/UEFI](#06a70476-c3f4-439a-ac84-725d98207863)
+* [Query drive SMART status (with other info)](#e9133478-5f92-4354-ba7a-c9c194a23554)
 
 ---
 
@@ -355,3 +356,14 @@ settings:
 Execute this command from a command prompt to restart the machine into BIOS/UEFI:
 
     shutdown /r /fw /t 0
+
+
+
+
+<div id="e9133478-5f92-4354-ba7a-c9c194a23554">
+
+## Query drive SMART status (with other info)
+
+Execute this command from a command prompt:
+
+    wmic diskdrive get status,model,serialnumber
