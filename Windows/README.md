@@ -380,6 +380,6 @@ On some Windows installations (but not all, and seemingly NOT depending on versi
 
     1. Press Windows+T to place focus on the task bar
     2. Press Arrow Left or Arrow Right to select the icon you want to move
-    3. Use Alt+Shift+Arrow Left or Alt+Shift+Arrow Right to move it spot by spot
+    3. Use Alt+Shift+Arrow Left or Alt+Shift+Arrow Right to move it left or right
 
 Annoying for sure, but at least it's a working solution to what should NOT be a problem in the first place (great job Microsoft! /s)
