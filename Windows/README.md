@@ -30,6 +30,7 @@ or PowerShell prompts.**
 * [Disable the Windows Welcome Experience](#7bfeb95d-6447-4768-bc3f-8cfdb6615472)
 * [Reboot into BIOS/UEFI](#06a70476-c3f4-439a-ac84-725d98207863)
 * [Query drive SMART status (with other info)](#e9133478-5f92-4354-ba7a-c9c194a23554)
+* [Problem dragging and dropping taskbar icons)](#434c33fa-eb3a-47ee-a526-0a3e51f282de)
 
 ---
 
@@ -367,3 +368,18 @@ Execute this command from a command prompt to restart the machine into BIOS/UEFI
 Execute this command from a command prompt:
 
     wmic diskdrive get status,model,serialnumber
+
+
+
+
+<div id="434c33fa-eb3a-47ee-a526-0a3e51f282de">
+
+## Problem dragging and dropping taskbar icons
+
+On some Windows installations (but not all, and seemingly NOT depending on version), you can freely drag-and-drop taskbar icons around, for running apps, when labels are turned off.  But, sometimes, this doesn't work (it DOES if labels are turned on).  You can, however, do it via keyboard shortcuts:
+
+    1. Press Windows + T to place focus on the task bar
+    2. Press Arrow Left or Arrow Right to select the icon you want to move
+    3. Use Alt+Shift+Arrow Left or Alt+Shift+Arrow Right to move it spot by spot
+
+Annoying for sure, but at least it's a working solution to what should NOT be a problem in the first place (great job Microsoft! /s)
