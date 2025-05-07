@@ -378,7 +378,7 @@ Execute this command from a command prompt:
 
 On some Windows installations (but not all, and seemingly NOT depending on version), you can freely drag-and-drop taskbar icons around, for running apps, when labels are turned off.  But, sometimes, this doesn't work (it DOES if labels are turned on).  You can, however, do it via keyboard shortcuts:
 
-    1. Press Windows + T to place focus on the task bar
+    1. Press Windows+T to place focus on the task bar
     2. Press Arrow Left or Arrow Right to select the icon you want to move
     3. Use Alt+Shift+Arrow Left or Alt+Shift+Arrow Right to move it spot by spot
 
