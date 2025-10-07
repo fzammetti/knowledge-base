@@ -95,13 +95,13 @@ To skip CI/CD pipeline, add **[ci skip]** or **[skip ci]** to commit message
 
 </div>
 
-First, go into GitLab and go to Your Profile->Access Tokens.  Create a new PERSONAL access token (a project token will
-NOT work), name it temp (or anything, it doesn't really matter), enable read_repository scope, and copy value it
-generates.
+First, go into GitLab and go to **Your Profile->Access Tokens**.  Create a new **PERSONAL** access token (a project
+token will **NOT** work), name it **temp** (or anything, it doesn't really matter), enable **read_repository** scope,
+and copy value it generates.
 
 Then, to download file:
 
     curl --header "PRIVATE-TOKEN: <PAT>" "https://<GITLAB_DOMAIN>/api/v4/projects/<PROJECT_ID>/repository/files/<FILENAME>/raw?ref=<BRANCH>" --output <FILENAME>
 
-Replace the placeholders with real values, might need to alter path.  The Project ID can be found by going into GitLab,
-going to the correct project, then going to Settings->General.
+Replace the placeholders with real values, and you might also need to alter the path depending on your installation.
+The Project ID can be found by going into GitLab, going to the correct project, then going to **Settings->General**.
