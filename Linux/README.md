@@ -109,6 +109,7 @@
 * [Set up an SFTP server](#613a1e17-1636-45b7-ad23-0df92b0f41c1)
 * [Compare two files line by line and list any lines in each not in the other](#b17ab9d3-19bf-411e-93b6-00341817e222)
 * [Fedora upgrade to a specific version](#8d33d69b-2878-4914-9e4d-5c422254c913)
+* [List all certs installed on system](#06c67178-0efc-454d-9cad-8b511d3b1505)
 
 ---
 
@@ -1453,3 +1454,18 @@ Or, just use dos2unix if installed.
     sudo dnf upgrade --refresh
     sudo dnf install dnf-plugin-system-upgrade
     sudo dnf system-upgrade download --releasever=39
+
+
+
+
+<div id="06c67178-0efc-454d-9cad-8b511d3b1505">
+
+## List all certs installed on system
+
+</div>
+
+    awk -v cmd='openssl x509 -noout -subject' '/BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt
+
+To search for a specific cert, add to end:
+
+    | grep -i "<search_term>"

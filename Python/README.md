@@ -9,6 +9,7 @@
 * [Upgrade a package](#41d6a4a3-2dcd-4162-b3e2-78dc7d2c766f)
 * [Upgrade all packages (Windows only, must execute in Powershell)](#682fb3cc-99f7-49a0-adab-bc920b17a2e4)
 * [Upgrade Pip, avoiding frequent errors](#85fdcca7-33b6-4dbb-b056-a2455a7111c5)
+* [Dealing with SSL errors during pip install](#f37d9314-96a6-447f-9016-4af00a246e02)
 
 ---
 
@@ -92,3 +93,24 @@
     python -m pip uninstall pip
     python -m ensurepip
     python -m pip install -U pip
+
+
+
+
+<div id="f37d9314-96a6-447f-9016-4af00a246e02">
+
+## Dealing with SSL errors during pip install
+
+</div>
+
+If you're trying to **pip install** stuff and you hit an SSL error, one way around it is to add:
+
+    --trusted-host <domain>
+
+...to the pip install command.  For example:
+
+    pip3 install -r requirements.txt --trusted-host files.pythonhosted.org
+
+It should be noted that this is a **VERY RISKY IDEA** because this disables HTTPS certificate validation, which opens
+you up to man-in-the-middle attacks, which could allow arbitrary code to potentially be run.  FYI, **curl** calls this
+option **--insecure** (which is more accurate than "trusted").

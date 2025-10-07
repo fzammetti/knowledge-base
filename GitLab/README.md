@@ -5,6 +5,7 @@
 * [How to remove a CI/CD runner in GitLab](#0316097f-1ff4-42b5-b370-ca21806a237d)
 * [To configure SMTP in GitLab (using non-SSL SMTP server)](#0c285472-9577-480e-ae55-fe88eb9400dc)
 * [Skipping GitLab CI/CD pipeline](#ee700974-96aa-41b5-a0e8-40ee71994a7f)
+* [Download a file from GitLab using the GitLab API](#3fa50e07-3a93-4096-86ff-e6c78e103253)
 
 ---
 
@@ -84,3 +85,23 @@ Confirm email is received properly.
 </div>
 
 To skip CI/CD pipeline, add **[ci skip]** or **[skip ci]** to commit message
+
+
+
+
+<div id="3fa50e07-3a93-4096-86ff-e6c78e103253">
+
+## Download a file from GitLab using the GitLab API
+
+</div>
+
+First, go into GitLab and go to Your Profile->Access Tokens.  Create a new PERSONAL access token (a project token will
+NOT work), name it temp (or anything, it doesn't really matter), enable read_repository scope, and copy value it
+generates.
+
+Then, to download file:
+
+    curl --header "PRIVATE-TOKEN: <PAT>" "https://<GITLAB_DOMAIN>/api/v4/projects/<PROJECT_ID>/repository/files/<FILENAME>/raw?ref=<BRANCH>" --output <FILENAME>
+
+Replace the placeholders with real values, might need to alter path.  The Project ID can be found by going into GitLab,
+going to the correct project, then going to Settings->General.

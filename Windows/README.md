@@ -30,7 +30,7 @@ or PowerShell prompts.**
 * [Disable the Windows Welcome Experience](#7bfeb95d-6447-4768-bc3f-8cfdb6615472)
 * [Reboot into BIOS/UEFI](#06a70476-c3f4-439a-ac84-725d98207863)
 * [Query drive SMART status (with other info)](#e9133478-5f92-4354-ba7a-c9c194a23554)
-* [Problem dragging and dropping taskbar icons)](#434c33fa-eb3a-47ee-a526-0a3e51f282de)
+* [Problem dragging and dropping taskbar icons](#434c33fa-eb3a-47ee-a526-0a3e51f282de)
 
 ---
 
