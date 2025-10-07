@@ -33,7 +33,7 @@ which to bind.
 
 </div>
 
-    nmap --script ssl-enum-ciphers -p 443 MY_DOMAIN
+    nmap --script ssl-enum-ciphers -p 443 <DOMAIN>
 
 
 
