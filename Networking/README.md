@@ -69,5 +69,5 @@ That will generate a key using the ECDS algorithm and with a key size of 521 bit
 
 You can generate a key with or without a passphrase, just follow the prompts.
 
-The public key will have a .pub extension and it what goes on the server.  The private key, the other generated file,
+The public key will have a .pub extension and is what goes on the server.  The private key, the other generated file,
 stays on the client.
