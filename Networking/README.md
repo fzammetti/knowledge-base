@@ -5,6 +5,7 @@
 * [ExpressVPN Adapter Binding In QBitorrent](#89691b66-293b-4383-a745-c7ddd69e1ca3)
 * [Get a list of cipher suites available on a URL (Linux)](#3a292c69-c49a-4d79-9fd8-17646eb35965)
 * [SFTP "Unable to negotiate" error (Linux)](#d5113dea-fed2-4c20-983b-4cff97e67477)
+* [How to generate an SSH key](#fb06534a-d774-4bbc-8f5f-3a1fbaa75dc1)
 
 ---
 
@@ -52,3 +53,21 @@ command line:
     -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa
 
 You may have to change **ssh-rsa** there, but the point is to use one that the server offers.
+
+
+
+
+<div id="fb06534a-d774-4bbc-8f5f-3a1fbaa75dc1">
+
+## How to generate an SSH key
+
+</div>
+
+    ssh-keygen -t ecdsa -b 521
+
+That will generate a key using the ECDS algorithm and with a key size of 521 bits.
+
+You can generate a key with or without a passphrase, just follow the prompts.
+
+The public key will have a .pub extension and it what goes on the server.  The private key, the other generated file,
+stays on the client.
