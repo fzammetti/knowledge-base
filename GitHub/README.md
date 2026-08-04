@@ -3,6 +3,7 @@
 ---
 
 * [How to set up an action to update a server on push](#e4187d6c-3e9d-447f-832e-2179a5bdcb14)
+* [How to copy a secret from one repo to another](#b80a88d2-4c7b-43ad-9f56-2f134f285661)
 
 ---
 
@@ -90,3 +91,53 @@ permission.
 
 Note this assumes there will NEVER be changes to the repo on the server.  If that may not be true, add the
 **--ff-only** option to the **git pull** command to be safe.
+
+
+
+
+<div id="b80a88d2-4c7b-43ad-9f56-2f134f285661">
+
+## How to copy a secret from one repo to another
+
+</div>
+
+Let's say you have a secret in one repo and you want to copy it to another.  You can do this with a temporary token
+and a temporary action workflow.
+
+1. Create a secret in the target repo, value doesn't matter.
+2. Create a fine-grained personal access token named **TEMP_COPY_TOKEN** with attributes:
+   - **Repository access*: only <SOURCE_REPO_NAME>
+   - **Repository permission**: Secrets - Read and write
+3. Add a secret to the source repo named **TEMP_COPY_SECRET_TOKEN** and set the value to the above token.
+4. Add the following workflow to the source repo (add **temp_copy_secret.yaml** to the **.github/workflows** directory):
+
+       name: Copy secret from source repo to target repo
+
+       on:
+         workflow_dispatch:
+
+       permissions: {}
+
+       jobs:
+         copy-secret:
+           runs-on: ubuntu-latest
+
+           steps:
+             - name: Copy secret
+               env:
+                 SOURCE_SECRET: ${{ secrets.<NAME_OF_SECRET_TO_COPY> }}
+                 GH_TOKEN: ${{ secrets.TEMP_COPY_SECRET_TOKEN }}
+               run: |
+                 if [ -z "$SOURCE_SECRET" ]; then
+                   echo "Source secret is empty"
+                   exit 1
+                 fi
+
+                 printf '%s' "$SOURCE_SECRET" |
+                   gh secret set <NAME_OF_TARGET_SECRET> \
+                     --repo <YOUR_GITHUB_USERNAME>/<TARGET_REPO_NAME)
+
+5. Run the action.
+6. Check the secret in the target repo and ensure the last update timestamp has updated.  Since you can't see the
+   value you can't truly confrim it was copied, though you can try whatever action depends on it to confirm.
+7. Delete the **temp_copy_secret.yaml** file and the **TEMP_COPY_TOKEN** and you're done.
