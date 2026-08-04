@@ -106,7 +106,7 @@ and a temporary action workflow.
 
 1. Create a secret in the target repo, value doesn't matter.
 2. Create a fine-grained personal access token named **TEMP_COPY_TOKEN** with attributes:
-   - **Repository access*: only <SOURCE_REPO_NAME>
+   - **Repository access**: only <SOURCE_REPO_NAME>
    - **Repository permission**: Secrets - Read and write
 3. Add a secret to the source repo named **TEMP_COPY_SECRET_TOKEN** and set the value to the above token.
 4. Add the following workflow to the source repo (add **temp_copy_secret.yaml** to the **.github/workflows** directory):
