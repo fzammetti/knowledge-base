@@ -110,6 +110,7 @@
 * [Compare two files line by line and list any lines in each not in the other](#b17ab9d3-19bf-411e-93b6-00341817e222)
 * [Fedora upgrade to a specific version](#8d33d69b-2878-4914-9e4d-5c422254c913)
 * [List all certs installed on system](#06c67178-0efc-454d-9cad-8b511d3b1505)
+* [Set a static IP on Linux (Ubuntu, maybe others)](#96f51c5e-a883-4636-9e95-b600ecb4cf79)
 
 ---
 
@@ -1469,3 +1470,51 @@ Or, just use dos2unix if installed.
 To search for a specific cert, add to end:
 
     | grep -i "<search_term>"
+
+
+
+
+<div id="96f51c5e-a883-4636-9e95-b600ecb4cf79">
+
+## Set a static IP on Linux (Ubuntu, maybe others)
+
+Go to the configuration folder:
+
+    cd /etc/netplan
+
+List the files and look for a YAML file named something like **00-installer-config.yaml** (may be different on your
+system).
+
+Open the file with a text editor:
+
+    sudo <text_editor_name> /etc/netplan/00-installer-config.yaml
+
+Change **dhcp4: true** to **dhcp4: false** and add your static details.
+
+Example configuration file (yours may be different):
+
+    # This is the network config written by 'subiquity'
+    network:
+      ethernets:
+        eth0:
+          dhcp4: false
+          dhcp6: false
+          addresses:
+            - <desired_ip_address>/24
+          routes:
+            - to: default
+              via: <gateway_ip>
+          nameservers:
+            addresses:
+              - <dns_server_1>
+              - <dns_server_2>
+              ...and so on...
+          match:
+            macaddress: <should already be filled out>
+          set-name: <desired_ethernet_interface_name>
+      version: 2
+      wifis: {}
+
+Save file and exit editor. Then apply and test:
+
+    netplan apply
