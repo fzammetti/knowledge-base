@@ -111,6 +111,7 @@
 * [Fedora upgrade to a specific version](#8d33d69b-2878-4914-9e4d-5c422254c913)
 * [List all certs installed on system](#06c67178-0efc-454d-9cad-8b511d3b1505)
 * [Set a static IP on Linux (Ubuntu, maybe others)](#96f51c5e-a883-4636-9e95-b600ecb4cf79)
+* [Install newer version of Node on Ubuntu than what is available by default](#e14f2127-101b-4732-8cca-464256f1d0fa)
 
 ---
 
@@ -1518,3 +1519,38 @@ Example configuration file (yours may be different):
 Save file and exit editor. Then apply and test:
 
     netplan apply
+
+
+
+
+<div id="e14f2127-101b-4732-8cca-464256f1d0fa">
+
+## Install newer version of Node on Ubuntu than what is available by default
+
+</div>
+
+Create the keyrings directory and download the NodeSource GPG key
+
+    mkdir -p /etc/apt/keyrings
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+Add the NodeSource repository configuration for version XX (26 in this example)
+
+    echo "Types: deb
+    URIs: https://deb.nodesource.com/node_26.x
+    Suites: nodistro
+    Components: main
+    Architectures: $(dpkg --print-architecture)
+    Signed-By: /etc/apt/keyrings/nodesource.gpg" > /etc/apt/sources.list.d/nodesource.sources
+
+Update package index and upgrade nodejs
+
+    apt-get update
+    apt-get install --only-upgrade -y nodejs
+
+Verify version
+
+    node -v
+
+This should pull the latest 26.x version.  I believe a normal apt upgrade after that should update Node, at least
+for the 26.x branch.
