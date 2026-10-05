@@ -31,6 +31,7 @@ or PowerShell prompts.**
 * [Reboot into BIOS/UEFI](#06a70476-c3f4-439a-ac84-725d98207863)
 * [Query drive SMART status (with other info)](#e9133478-5f92-4354-ba7a-c9c194a23554)
 * [Problem dragging and dropping taskbar icons](#434c33fa-eb3a-47ee-a526-0a3e51f282de)
+* [Attempt to fix UniGet/WinGet not reading packages for updates](#d8cf153b-a2db-4e16-b8b1-68f68521fde9)
 
 ---
 
@@ -383,3 +384,17 @@ On some Windows installations (but not all, and seemingly NOT depending on versi
     3. Use Alt+Shift+Arrow Left or Alt+Shift+Arrow Right to move it left or right
 
 Annoying for sure, but at least it's a working solution to what should NOT be a problem in the first place (great job Microsoft! /s)
+
+
+
+
+<div id="d8cf153b-a2db-4e16-b8b1-68f68521fde9">
+
+## Attempt to fix UniGet/WinGet not reading packages for updates
+
+If UniGet (WinGet) seems to hang when pulling a list of packages to update, try these two commands:
+
+    winget source reset --force
+    winget list
+
+The second one may prompt you for a confirmation, but after should show a proper list.
