@@ -32,6 +32,7 @@ or PowerShell prompts.**
 * [Query drive SMART status (with other info)](#e9133478-5f92-4354-ba7a-c9c194a23554)
 * [Problem dragging and dropping taskbar icons](#434c33fa-eb3a-47ee-a526-0a3e51f282de)
 * [Attempt to fix UniGet/WinGet not reading packages for updates](#d8cf153b-a2db-4e16-b8b1-68f68521fde9)
+* [Update product key and activate Windows from command line](#4a5f68b7-df09-48bb-8d69-348f7cc09dfc)
 
 ---
 
@@ -398,3 +399,18 @@ If UniGet (WinGet) seems to hang when pulling a list of packages to update, try 
     winget list
 
 The second one may prompt you for a confirmation, but after should show a proper list.
+
+
+
+
+<div id="4a5f68b7-df09-48bb-8d69-348f7cc09dfc">
+
+## Update product key and activate Windows from command line
+
+From an admin-elevated command prompt, install product key:
+
+    slmgr /ipk <PRODUCT_KEY>
+
+Trigger Windows activation:
+
+    slmgr /ato
